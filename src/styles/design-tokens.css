@@ -1,0 +1,354 @@
+/**
+ * design-tokens.css — AUTO-GENERATED. DO NOT EDIT MANUALLY.
+ *
+ * Source of truth : design-tokens.tokens.json
+ * Regenerate      : npm run tokens:build
+ * Check (CI)      : npm run tokens:check
+ *
+ * Variable conventions
+ * ──────────────────────────────────────────────────────────
+ *  --_p-*       Primitive palette steps     INTERNAL — do not use in component CSS
+ *  --color-*    Semantic color roles         PUBLIC — use these in all component CSS
+ *  --type-*     Typography scale tokens      PUBLIC
+ *  --effect-*   Shadow / elevation tokens    PUBLIC
+ *
+ * Color system design
+ * ──────────────────────────────────────────────────────────
+ *  Primitives are raw palette values (hue × lightness steps).
+ *  Color roles are semantic names for those values.
+ *  UI code uses only --color-* so that themes, dark mode, or
+ *  brand changes are made by reassigning roles — not hunting
+ *  through every component.
+ *
+ * Generated: 2026-10-12T08:28:41.781Z
+ */
+
+:root {
+
+  /* ── LAYER 1 · PRIMITIVE COLORS — internal, do not use in component CSS ── */
+  --_p-key-primary: #5936e3;
+  --_p-key-secondary: #625a81;
+  --_p-key-tertiary: #524096;
+  --_p-key-neutral: #605d6b;
+  --_p-key-neutral-variant: #615c75;
+  --_p-key-error: #e50909;
+  --_p-key-accent: #c0e336;
+  --_p-primary-0: #000000;
+  --_p-primary-10: #1a0063;
+  --_p-primary-20: #2e009c;
+  --_p-primary-30: #4413d0;
+  --_p-primary-40: #5936e3;
+  --_p-primary-50: #765aff;
+  --_p-primary-60: #917eff;
+  --_p-primary-70: #ad9fff;
+  --_p-primary-80: #c9bfff;
+  --_p-primary-90: #e5deff;
+  --_p-primary-95: #f4eeff;
+  --_p-primary-98: #fdf8ff;
+  --_p-primary-99: #faf8fe;
+  --_p-primary-100: #ffffff;
+  --_p-secondary-0: #000000;
+  --_p-secondary-10: #1d1639;
+  --_p-secondary-20: #322b4f;
+  --_p-secondary-30: #494267;
+  --_p-secondary-40: #625a81;
+  --_p-secondary-50: #7a729a;
+  --_p-secondary-60: #948bb5;
+  --_p-secondary-70: #afa5d1;
+  --_p-secondary-80: #cbc0ed;
+  --_p-secondary-90: #e7deff;
+  --_p-secondary-95: #f5eeff;
+  --_p-secondary-98: #fdf7ff;
+  --_p-secondary-99: #fffbff;
+  --_p-secondary-100: #ffffff;
+  --_p-tertiary-0: #000000;
+  --_p-tertiary-10: #1e0060;
+  --_p-tertiary-20: #331f76;
+  --_p-tertiary-30: #4a388e;
+  --_p-tertiary-40: #524096;
+  --_p-tertiary-50: #7c6ac2;
+  --_p-tertiary-60: #9684de;
+  --_p-tertiary-70: #b19efb;
+  --_p-tertiary-80: #cbbeff;
+  --_p-tertiary-90: #e7deff;
+  --_p-tertiary-95: #f5eeff;
+  --_p-tertiary-98: #fdf7ff;
+  --_p-tertiary-99: #fffbff;
+  --_p-tertiary-100: #ffffff;
+  --_p-neutral-0: #000000;
+  --_p-neutral-10: #1c1a26;
+  --_p-neutral-20: #312f3b;
+  --_p-neutral-30: #484552;
+  --_p-neutral-40: #605d6b;
+  --_p-neutral-50: #787584;
+  --_p-neutral-60: #928f9e;
+  --_p-neutral-70: #ada9b9;
+  --_p-neutral-80: #c9c4d4;
+  --_p-neutral-90: #e5e0f1;
+  --_p-neutral-95: #f4eeff;
+  --_p-neutral-98: #fdf8ff;
+  --_p-neutral-99: #fffbff;
+  --_p-neutral-100: #ffffff;
+  --_p-neutral-4: #0e0d18;
+  --_p-neutral-6: #14121d;
+  --_p-neutral-12: #201e2a;
+  --_p-neutral-17: #2a2835;
+  --_p-neutral-22: #353340;
+  --_p-neutral-24: #3a3844;
+  --_p-neutral-87: #ddd7e8;
+  --_p-neutral-92: #ebe6f6;
+  --_p-neutral-94: #f1ebfc;
+  --_p-neutral-96: #f7f1ff;
+  --_p-neutral-variant-0: #000000;
+  --_p-neutral-variant-10: #1c192e;
+  --_p-neutral-variant-20: #312d44;
+  --_p-neutral-variant-30: #48445b;
+  --_p-neutral-variant-40: #615c75;
+  --_p-neutral-variant-50: #79748e;
+  --_p-neutral-variant-60: #938da8;
+  --_p-neutral-variant-70: #aea7c4;
+  --_p-neutral-variant-80: #cac3e0;
+  --_p-neutral-variant-90: #e6defc;
+  --_p-neutral-variant-95: #f4eeff;
+  --_p-neutral-variant-98: #fdf8ff;
+  --_p-neutral-variant-99: #fffbff;
+  --_p-neutral-variant-100: #ffffff;
+  --_p-error-0: #000000;
+  --_p-error-10: #410000;
+  --_p-error-20: #690001;
+  --_p-error-30: #930002;
+  --_p-error-40: #e50909;
+  --_p-error-50: #ec140f;
+  --_p-error-60: #ff5542;
+  --_p-error-70: #ff8a79;
+  --_p-error-80: #ffb4a8;
+  --_p-error-90: #ffdad5;
+  --_p-error-95: #ffedea;
+  --_p-error-98: #fff8f6;
+  --_p-error-99: #fffbff;
+  --_p-error-100: #ffffff;
+
+  /* ── LAYER 2 · COLOR ROLES — use these in all component and page CSS ── */
+  --color-primary: var(--_p-primary-40);
+  --color-on-primary: var(--_p-primary-100);
+  --color-primary-container: var(--_p-primary-90);
+  --color-on-primary-container: var(--_p-primary-30);
+  --color-secondary: var(--_p-secondary-40);
+  --color-on-secobdary: var(--_p-secondary-100);
+  --color-secondary-container: var(--_p-secondary-90);
+  --color-on-secondary-container: var(--_p-secondary-30);
+  --color-tertiary: var(--_p-tertiary-40);
+  --color-on-tertiary: var(--_p-tertiary-100);
+  --color-tertiary-container: var(--_p-tertiary-90);
+  --color-on-tertiary-container: var(--_p-tertiary-30);
+  --color-error: var(--_p-error-40);
+  --color-on-error: var(--_p-error-100);
+  --color-error-container: var(--_p-error-90);
+  --color-on-error-container: var(--_p-error-30);
+  --color-surface: var(--_p-neutral-98);
+  --color-on-surface: var(--_p-neutral-10);
+  --color-surface-variant: var(--_p-neutral-variant-90);
+  --color-on-surface-variant: var(--_p-neutral-variant-30);
+  --color-surface-container-highest: var(--_p-neutral-90);
+  --color-surface-container-high: var(--_p-neutral-92);
+  --color-surface-container: var(--_p-neutral-94);
+  --color-surface-container-low: var(--_p-neutral-96);
+  --color-surface-container-lowest: var(--_p-neutral-90);
+  --color-inverse-surface: var(--_p-neutral-20);
+  --color-inverse-on-surface: var(--_p-neutral-95);
+  --color-surface-tint: var(--_p-primary-40);
+  --color-surface-tint-color: var(--_p-primary-40);
+  --color-outline: var(--_p-neutral-variant-50);
+  --color-outline-variant: var(--_p-neutral-variant-80);
+  --color-primary-fixed: var(--_p-primary-90);
+  --color-on-primary-fixed: var(--_p-primary-10);
+  --color-primary-fixed-dim: var(--_p-primary-80);
+  --color-on-primary-fixed-variant: var(--_p-primary-30);
+  --color-inverse-primary: var(--_p-primary-80);
+  --color-secondary-fixed: var(--_p-secondary-90);
+  --color-on-secondary-fixed: var(--_p-secondary-10);
+  --color-secondary-fixed-dim: var(--_p-secondary-80);
+  --color-on-secondary-fixed-variant: var(--_p-secondary-30);
+  --color-tertiary-fixed: var(--_p-tertiary-90);
+  --color-on-tertiary-fixed: var(--_p-tertiary-10);
+  --color-tertiary-fixed-dim: var(--_p-tertiary-30);
+  --color-on-tertiary-fixed-variant: var(--_p-tertiary-80);
+  --color-background: var(--_p-neutral-98);
+  --color-on-background: var(--_p-neutral-10);
+  --color-surface-bright: var(--_p-neutral-98);
+  --color-surface-dim: var(--_p-neutral-87);
+  --color-scrim: var(--_p-neutral-0);
+  --color-shadow: #ffffff;
+
+  /* ── LAYER 3 · TYPOGRAPHY ── */
+  --type-display-large-font-size: 64px;
+  --type-display-large-text-decoration: none;
+  --type-display-large-font-family: "DM Sans", sans-serif;
+  --type-display-large-font-weight: 600;
+  --type-display-large-font-style: normal;
+  --type-display-large-font-stretch: normal;
+  --type-display-large-letter-spacing: -2.24px;
+  --type-display-large-line-height: 96px;
+  --type-display-large-paragraph-indent: 0px;
+  --type-display-large-paragraph-spacing: 0px;
+  --type-display-large-text-case: none;
+  --type-display-medium-font-size: 50px;
+  --type-display-medium-text-decoration: none;
+  --type-display-medium-font-family: "Inter", sans-serif;
+  --type-display-medium-font-weight: 600;
+  --type-display-medium-font-style: normal;
+  --type-display-medium-font-stretch: normal;
+  --type-display-medium-letter-spacing: -1.5px;
+  --type-display-medium-line-height: 75px;
+  --type-display-medium-paragraph-indent: 0px;
+  --type-display-medium-paragraph-spacing: 0px;
+  --type-display-medium-text-case: none;
+  --type-display-small-font-size: 40px;
+  --type-display-small-text-decoration: none;
+  --type-display-small-font-family: "DM Sans", sans-serif;
+  --type-display-small-font-weight: 600;
+  --type-display-small-font-style: normal;
+  --type-display-small-font-stretch: normal;
+  --type-display-small-letter-spacing: -0.8px;
+  --type-display-small-line-height: 60px;
+  --type-display-small-paragraph-indent: 0px;
+  --type-display-small-paragraph-spacing: 0px;
+  --type-display-small-text-case: none;
+  --type-headline-large-font-size: 40px;
+  --type-headline-large-text-decoration: none;
+  --type-headline-large-font-family: "DM Sans", sans-serif;
+  --type-headline-large-font-weight: 500;
+  --type-headline-large-font-style: normal;
+  --type-headline-large-font-stretch: normal;
+  --type-headline-large-letter-spacing: -0.6px;
+  --type-headline-large-line-height: 60px;
+  --type-headline-large-paragraph-indent: 0px;
+  --type-headline-large-paragraph-spacing: 0px;
+  --type-headline-large-text-case: none;
+  --type-headline-medium-font-size: 32px;
+  --type-headline-medium-text-decoration: none;
+  --type-headline-medium-font-family: "DM Sans", sans-serif;
+  --type-headline-medium-font-weight: 500;
+  --type-headline-medium-font-style: normal;
+  --type-headline-medium-font-stretch: normal;
+  --type-headline-medium-letter-spacing: -0.576px;
+  --type-headline-medium-line-height: 48px;
+  --type-headline-medium-paragraph-indent: 0px;
+  --type-headline-medium-paragraph-spacing: 0px;
+  --type-headline-medium-text-case: none;
+  --type-headline-small-font-size: 24px;
+  --type-headline-small-text-decoration: none;
+  --type-headline-small-font-family: "DM Sans", sans-serif;
+  --type-headline-small-font-weight: 500;
+  --type-headline-small-font-style: normal;
+  --type-headline-small-font-stretch: normal;
+  --type-headline-small-letter-spacing: -0.336px;
+  --type-headline-small-line-height: 36px;
+  --type-headline-small-paragraph-indent: 0px;
+  --type-headline-small-paragraph-spacing: 0px;
+  --type-headline-small-text-case: none;
+  --type-title-large-font-size: 24px;
+  --type-title-large-text-decoration: none;
+  --type-title-large-font-family: "DM Sans", sans-serif;
+  --type-title-large-font-weight: 500;
+  --type-title-large-font-style: normal;
+  --type-title-large-font-stretch: normal;
+  --type-title-large-letter-spacing: -0.24px;
+  --type-title-large-line-height: 36px;
+  --type-title-large-paragraph-indent: 0px;
+  --type-title-large-paragraph-spacing: 0px;
+  --type-title-large-text-case: none;
+  --type-title-medium-font-size: 16px;
+  --type-title-medium-text-decoration: none;
+  --type-title-medium-font-family: "DM Sans", sans-serif;
+  --type-title-medium-font-weight: 500;
+  --type-title-medium-font-style: normal;
+  --type-title-medium-font-stretch: normal;
+  --type-title-medium-letter-spacing: -0.16px;
+  --type-title-medium-line-height: 24px;
+  --type-title-medium-paragraph-indent: 0px;
+  --type-title-medium-paragraph-spacing: 0px;
+  --type-title-medium-text-case: none;
+  --type-title-small-font-size: 14px;
+  --type-title-small-text-decoration: none;
+  --type-title-small-font-family: "DM Sans", sans-serif;
+  --type-title-small-font-weight: 500;
+  --type-title-small-font-style: normal;
+  --type-title-small-font-stretch: normal;
+  --type-title-small-letter-spacing: -0.126px;
+  --type-title-small-line-height: 21px;
+  --type-title-small-paragraph-indent: 0px;
+  --type-title-small-paragraph-spacing: 0px;
+  --type-title-small-text-case: none;
+  --type-body-large-font-size: 16px;
+  --type-body-large-text-decoration: none;
+  --type-body-large-font-family: "DM Sans", sans-serif;
+  --type-body-large-font-weight: 500;
+  --type-body-large-font-style: normal;
+  --type-body-large-font-stretch: normal;
+  --type-body-large-letter-spacing: -0.144px;
+  --type-body-large-line-height: 24px;
+  --type-body-large-paragraph-indent: 0px;
+  --type-body-large-paragraph-spacing: 0px;
+  --type-body-large-text-case: none;
+  --type-body-medium-font-size: 14px;
+  --type-body-medium-text-decoration: none;
+  --type-body-medium-font-family: "DM Sans", sans-serif;
+  --type-body-medium-font-weight: 500;
+  --type-body-medium-font-style: normal;
+  --type-body-medium-font-stretch: normal;
+  --type-body-medium-letter-spacing: -0.098px;
+  --type-body-medium-line-height: 21px;
+  --type-body-medium-paragraph-indent: 0px;
+  --type-body-medium-paragraph-spacing: 0px;
+  --type-body-medium-text-case: none;
+  --type-body-small-font-size: 12px;
+  --type-body-small-text-decoration: none;
+  --type-body-small-font-family: "DM Sans", sans-serif;
+  --type-body-small-font-weight: 500;
+  --type-body-small-font-style: normal;
+  --type-body-small-font-stretch: normal;
+  --type-body-small-letter-spacing: -0.048px;
+  --type-body-small-line-height: 18px;
+  --type-body-small-paragraph-indent: 0px;
+  --type-body-small-paragraph-spacing: 0px;
+  --type-body-small-text-case: none;
+  --type-label-large-font-size: 14px;
+  --type-label-large-text-decoration: none;
+  --type-label-large-font-family: "DM Sans", sans-serif;
+  --type-label-large-font-weight: 500;
+  --type-label-large-font-style: normal;
+  --type-label-large-font-stretch: normal;
+  --type-label-large-letter-spacing: -0.126px;
+  --type-label-large-line-height: 21px;
+  --type-label-large-paragraph-indent: 0px;
+  --type-label-large-paragraph-spacing: 0px;
+  --type-label-large-text-case: none;
+  --type-label-medium-font-size: 12px;
+  --type-label-medium-text-decoration: none;
+  --type-label-medium-font-family: "DM Sans", sans-serif;
+  --type-label-medium-font-weight: 500;
+  --type-label-medium-font-style: normal;
+  --type-label-medium-font-stretch: normal;
+  --type-label-medium-letter-spacing: -0.108px;
+  --type-label-medium-line-height: 18px;
+  --type-label-medium-paragraph-indent: 0px;
+  --type-label-medium-paragraph-spacing: 0px;
+  --type-label-medium-text-case: none;
+  --type-label-small-font-size: 11px;
+  --type-label-small-text-decoration: none;
+  --type-label-small-font-family: "DM Sans", sans-serif;
+  --type-label-small-font-weight: 500;
+  --type-label-small-font-style: normal;
+  --type-label-small-font-stretch: normal;
+  --type-label-small-letter-spacing: -0.077px;
+  --type-label-small-line-height: 16.5px;
+  --type-label-small-paragraph-indent: 0px;
+  --type-label-small-paragraph-spacing: 0px;
+  --type-label-small-text-case: none;
+
+  /* ── LAYER 4 · EFFECTS / SHADOWS ── */
+  --effect-soft-shadow: 4px 6px 12px rgba(89, 54, 227, 0.122);
+  --effect-medium-shadow: 4px 16px 24px rgba(89, 54, 227, 0.18);
+  --effect-hard-shadow: 4px 20px 20px rgba(89, 54, 227, 0.2);
+}
