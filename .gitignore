@@ -29,3 +29,6 @@ Thumbs.db
 *.tsbuildinfo
 .vscode/
 .idea/
+
+# Supabase temp
+supabase/.temp/
