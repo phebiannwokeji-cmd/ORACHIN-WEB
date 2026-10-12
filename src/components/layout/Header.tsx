@@ -5,7 +5,7 @@ import { BUSINESS_CONFIG } from '@/lib/config/business';
 const PRIMARY_NAV_ITEMS = [
   { label: 'Shop Paints', href: '#' },
   { label: 'Colours', href: '#' },
-  { label: 'Help Me Choose', href: '#' },
+  { label: 'Help Me Choose', href: '/calculator' },
   { label: 'Commercial and Bulk', href: '#' },
   { label: 'Contact and Delivery', href: '#' },
 ] as const;
@@ -55,7 +55,7 @@ export function Header() {
             <Link
               key={item.label}
               href={item.href}
-              aria-disabled="true"
+              aria-disabled={item.href === '#' ? 'true' : undefined}
               className="min-h-touch-target min-w-touch-target px-3 py-2.5 inline-flex items-center justify-center text-xs font-medium text-on-surface hover:text-primary hover:bg-surface-container-high rounded-sm whitespace-nowrap focus-visible:outline-2 focus-visible:outline-primary"
             >
               {item.label}

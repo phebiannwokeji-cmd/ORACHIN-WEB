@@ -24,12 +24,12 @@ export default function HomePage() {
           id="hero-heading"
           className="text-2xl sm:text-4xl font-display font-semibold text-on-surface tracking-tight leading-tight"
         >
-          Architectural & Industrial Coatings Manufactured in Lagos
+          Paint Manufacturer Serving Residential &amp; Commercial Customers in Lagos &amp; Across Nigeria
         </h1>
 
-        {/* Plain Explanation from PRD §1 & §2 */}
+        {/* Plain Explanation from PRD §1 */}
         <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed max-w-2xl">
-          Supplying high-performance exterior and interior paints alongside professional painting application services across Lagos and Nigeria.
+          Serving residential and commercial customers in Lagos and across Nigeria, with painting application services offered.
         </p>
 
         {/* Delivery & Response Timing Notice (Gate G8 compliant) */}
