@@ -30,3 +30,11 @@ This document tracks all owner decisions, their sources, dates, affected require
 ### AD-2026-10-12-01: Case-Study Initial Status
 - **Default:** New case studies default to `status = 'draft'` upon creation.
 - **Rationale:** Prevents accidental early publication before genuine photography and specifications are cleared.
+
+### AD-2026-10-12-02: Calculator Pack Combination Selection Algorithm
+- **Default:** When selecting pack sizes for estimated litres, choose the pack combination with the fewest supplied litres at or above the need, and fewer packs on a tie. If still tied, prefer larger standard packs.
+- **Rationale:** Mandated by `calculator.md` as an agent default because the PRD does not specify a commercial pack selection algorithm. Minimizes customer over-purchase while minimizing container handling.
+
+### AD-2026-10-12-03: Calculator Waste & Application Allowance Default
+- **Default:** Application allowance defaults to 0% in `BUSINESS_CONFIG.commercial.calculatorAllowancePercent`.
+- **Rationale:** Mandated by `calculator.md`. No approved allowance figure exists; defaulting to 0% avoids promising unverified allowances. Flagged for owner confirmation.

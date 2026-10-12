@@ -98,7 +98,7 @@ export const GATES_REGISTRY: Record<string, DecisionGate> = {
 
 export const BUSINESS_CONFIG = {
   name: 'ORACHIN Paints',
-  tagline: 'Premium Paints & Architectural Coatings',
+  tagline: 'Paint Manufacturer in Lagos',
   address: '110b Old Ewu Road, Aviation Estate, Mafoluku, Lagos',
   phoneNumbers: ['08035855944', '08108196504'] as const,
   whatsappNumbers: ['08035855944', '08108196504'] as const,
@@ -123,6 +123,7 @@ export const BUSINESS_CONFIG = {
     quoteValidityDays: 14,      // Provisional 14 days per D11
     discountCeilingBps: 300,    // 3.00% ceiling without owner approval
     checkoutEnabled: false,     // CHK01 fixed to false
+    calculatorAllowancePercent: 0, // Disclosed default allowance (calculator.md)
   },
   unconfigured: {
     emailProvider: null,
