@@ -1,86 +1,171 @@
+/**
+ * HeroSection — Homepage hero
+ *
+ * Pattern brief §1:
+ *   - One headline
+ *   - One supporting sentence
+ *   - Two agreed buttons: "Shop Paints" and "Request a Quote"
+ *   - Large labelled image placeholder (replace when owner supplies a photo)
+ *
+ * Rules applied:
+ *   - Site-Structure.md: two main actions, plain explanation, no delivery promise (G8)
+ *   - Scope-and-Phases.md: quote-only, no prices, no checkout
+ *   - ui-quality.md: 44 px touch targets, visible focus, 320 px min width
+ *   - Tokens only: no raw colours, spacing, font sizes or radii
+ */
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, Clock, ArrowRight, Calculator } from 'lucide-react';
 import { BUSINESS_CONFIG } from '@/lib/config/business';
 
 export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="max-w-4xl mx-auto w-full text-center flex flex-col items-center justify-center space-y-6 pt-4 pb-10"
+      className="
+        w-full
+        bg-surface
+        border-b border-outline-variant
+      "
     >
-      {/* Availability & Mode Badge */}
-      <div className="inline-flex flex-wrap items-center justify-center gap-2 px-3.5 py-1.5 bg-surface-container-high border border-outline-variant text-on-surface-variant text-xs font-medium rounded-full shadow-soft">
-        <span className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-primary" aria-hidden="true" />
-          <span>{BUSINESS_CONFIG.tagline}</span>
-        </span>
-        <span className="text-outline hidden sm:inline" aria-hidden="true">
-          •
-        </span>
-        <span className="text-primary font-semibold">Available, Made to Order</span>
-        <span className="text-outline hidden sm:inline" aria-hidden="true">
-          •
-        </span>
-        <span className="text-on-surface-variant">Quote Only</span>
-      </div>
-
-      {/* Main Headline (PRD §1 & smoke test requirement) */}
-      <h1
-        id="hero-heading"
-        className="text-3xl sm:text-5xl font-display font-semibold text-on-surface tracking-tight leading-[1.15]"
+      <div
+        className="
+          max-w-7xl mx-auto
+          px-4 py-12 sm:py-20
+          grid grid-cols-1 lg:grid-cols-2
+          gap-10 lg:gap-16
+          items-center
+        "
       >
-        Paint Manufacturer Serving Residential &amp; Commercial Customers in Lagos &amp; Across Nigeria
-      </h1>
+        {/* ── Text column ── */}
+        <div className="flex flex-col gap-6">
+          {/* Availability badge — scope-and-phases.md: "Quote only" / "Made to order" */}
+          <p className="inline-flex items-center gap-2 self-start text-xs font-medium text-on-surface-variant">
+            <span
+              className="inline-block w-2 h-2 rounded-full bg-primary shrink-0"
+              aria-hidden="true"
+            />
+            Available, made to order · Quote only
+          </p>
 
-      {/* Plain Explanation from PRD §1 */}
-      <p className="text-on-surface-variant text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-        Serving residential and commercial customers in Lagos and across Nigeria, with painting application services offered.
-      </p>
+          {/* Headline: one sentence, factual, from PRD §1 and site-structure.md */}
+          <h1
+            id="hero-heading"
+            className="
+              font-display font-semibold
+              text-3xl sm:text-4xl lg:text-5xl
+              leading-tight tracking-tight
+              text-on-surface
+            "
+          >
+            Paint manufacturer serving Lagos and across Nigeria
+          </h1>
 
-      {/* Trust & Timing Badges (Gate G8 compliant) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-xl text-left text-xs text-on-surface-variant">
-        <div className="flex items-start gap-2.5 p-3 rounded-md bg-surface-container border border-outline-variant">
-          <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-          <div>
-            <span className="font-semibold text-on-surface block">Production Lead Time</span>
-            <span>{BUSINESS_CONFIG.timing.productionLeadTimeDisplay}</span>
+          {/* Supporting sentence: plain explanation per site-structure.md */}
+          <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed">
+            {BUSINESS_CONFIG.name} makes architectural and decorative paints
+            to order. Painting application services are offered alongside paint
+            supply.
+          </p>
+
+          {/* Two agreed actions per site-structure.md */}
+          <div className="flex flex-wrap gap-3">
+            {/*
+              "Shop Paints" — page not yet built; href="#" with aria-disabled.
+              When /shop exists, remove aria-disabled and set href="/shop".
+            */}
+            <a
+              href="#"
+              aria-disabled="true"
+              aria-label="Shop Paints (page coming soon)"
+              className="
+                inline-flex items-center justify-center
+                min-h-[44px] px-6
+                bg-primary text-on-primary
+                text-sm font-medium
+                rounded-md shadow-soft
+                hover:opacity-90
+                focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
+                transition-opacity
+                cursor-not-allowed opacity-70
+              "
+            >
+              Shop Paints
+            </a>
+
+            {/* "Request a Quote" — /calculator is built */}
+            <Link
+              href="/calculator"
+              className="
+                inline-flex items-center justify-center
+                min-h-[44px] px-6
+                bg-surface-container-high text-on-surface
+                border border-outline
+                text-sm font-medium
+                rounded-md
+                hover:bg-surface-variant
+                focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
+                transition-colors
+              "
+            >
+              Request a Quote
+            </Link>
           </div>
+
+          {/* Hours disclosure — G8: no delivery promise */}
+          <p className="text-xs text-on-surface-variant">
+            Response hours: {BUSINESS_CONFIG.hours.days},{' '}
+            {BUSINESS_CONFIG.hours.time} ({BUSINESS_CONFIG.hours.timezone})
+          </p>
         </div>
-        <div className="flex items-start gap-2.5 p-3 rounded-md bg-surface-container border border-outline-variant">
-          <ShieldCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-          <div>
-            <span className="font-semibold text-on-surface block">Courier Delivery</span>
-            <span>{BUSINESS_CONFIG.timing.courierTransitNote}</span>
-          </div>
+
+        {/* ── Image placeholder column ── */}
+        {/*
+          Owner action: replace this <div> with a real <Image> once a photo is supplied.
+          The placeholder must keep its aspect ratio and label so it never silently disappears.
+        */}
+        <div
+          role="img"
+          aria-label="Photo of ORACHIN Paints products — image to be supplied by owner"
+          className="
+            w-full
+            aspect-[4/3] lg:aspect-auto lg:h-[420px]
+            rounded-lg
+            bg-surface-container
+            border border-outline-variant
+            flex flex-col items-center justify-center gap-3
+            text-on-surface-variant text-sm text-center px-4
+          "
+        >
+          <span
+            className="
+              block w-14 h-14
+              rounded-full bg-surface-container-high
+              border border-outline-variant
+              flex items-center justify-center
+            "
+            aria-hidden="true"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.5}
+              className="w-7 h-7 text-outline"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <path d="M21 15l-5-5L5 21" />
+            </svg>
+          </span>
+          <span className="block font-medium text-on-surface-variant">
+            Product photo
+          </span>
+          <span className="block text-xs text-outline">
+            Owner to supply image — labelled placeholder shown
+          </span>
         </div>
       </div>
-
-      {/* Two Main Actions per Site-Structure.md */}
-      <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-        {/* Action 1: Shop Paints */}
-        <Link
-          href="#categories"
-          className="min-h-touch-target min-w-touch-target px-6 py-3 inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-medium text-sm rounded-md shadow-soft hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-primary"
-        >
-          <span>Shop Paints</span>
-          <ArrowRight className="w-4 h-4" aria-hidden="true" />
-        </Link>
-
-        {/* Action 2: Request a Quote */}
-        <Link
-          href="/calculator"
-          className="min-h-touch-target min-w-touch-target px-6 py-3 inline-flex items-center justify-center gap-2 bg-surface-container-high text-on-surface border border-outline font-medium text-sm rounded-md hover:bg-surface-variant transition-colors focus-visible:outline-2 focus-visible:outline-primary"
-        >
-          <Calculator className="w-4 h-4 text-primary" aria-hidden="true" />
-          <span>Help Me Choose &amp; Calculate</span>
-        </Link>
-      </div>
-
-      {/* Working Hours Disclosure */}
-      <p className="text-xs text-on-surface-variant/80">
-        Response hours: {BUSINESS_CONFIG.hours.days}, 9:00 AM – 5:00 PM (Africa/Lagos)
-      </p>
     </section>
   );
 }
