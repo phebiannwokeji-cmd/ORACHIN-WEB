@@ -9,9 +9,9 @@ interface PageShellProps {
 
 export function PageShell({ children }: PageShellProps) {
   return (
-    <div className="h-dvh max-h-dvh min-h-dvh w-full flex flex-col justify-between bg-background text-on-background overflow-hidden">
+    <div className="min-h-screen w-full flex flex-col bg-background text-on-background">
       <Header />
-      <main className="flex-1 overflow-y-auto flex flex-col justify-center px-4 py-4 max-w-7xl w-full mx-auto">
+      <main className="flex-1 px-4 py-6 sm:py-8 max-w-7xl w-full mx-auto">
         {children}
       </main>
       <Footer />
