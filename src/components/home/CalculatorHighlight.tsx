@@ -20,7 +20,7 @@ export function CalculatorHighlight() {
               id="calculator-feature-heading"
               className="text-2xl sm:text-3xl font-display font-semibold text-on-surface"
             >
-              Don't Guess Your Paint Quantity. Calculate Exactly.
+              Don&apos;t Guess Your Paint Quantity. Calculate Exactly.
             </h2>
 
             <p className="text-sm sm:text-base text-on-surface-variant leading-relaxed">
