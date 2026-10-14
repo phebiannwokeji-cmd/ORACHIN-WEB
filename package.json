@@ -13,6 +13,7 @@
     "dev": "next dev",
     "prebuild": "npm run tokens:build",
     "build": "next build",
+    "lint": "eslint .",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "test": "node --experimental-strip-types --test test/**/*.test.mjs"
@@ -33,12 +34,13 @@
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "tailwindcss": "^4.3.3",
-    "typescript": "^7.0.2",
     "zod": "^4.6.6"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.8",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.0"
+    "eslint-config-next": "^16.4.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }
