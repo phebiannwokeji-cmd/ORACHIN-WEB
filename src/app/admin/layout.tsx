@@ -1,10 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { BUSINESS_CONFIG } from '@/lib/config/business';
 import { requireStaffActor } from '@/lib/staff-auth';
 import { Shield, BookOpen, AlertCircle, FileText, ShoppingBag, CreditCard, ClipboardList } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Admin',
+};
 
 export default async function AdminLayout({
   children,

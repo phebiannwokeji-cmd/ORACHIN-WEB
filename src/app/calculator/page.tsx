@@ -5,7 +5,7 @@ import { CalculatorClient } from '@/components/calculator/CalculatorClient';
 import { getCalculatorProducts, isSampleDataActive } from '@/lib/calculator/samples';
 
 export const metadata: Metadata = {
-  title: 'Paint Quantity Calculator | ORACHIN Paints',
+  title: 'Paint Quantity Calculator',
   description:
     'Calculate the paint litres and pack combination needed for your painting project based on wall dimensions and manufacturer coverage.',
 };

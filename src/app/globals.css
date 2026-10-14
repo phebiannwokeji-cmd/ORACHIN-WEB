@@ -42,6 +42,7 @@
   /* Typography families from tokens */
   --font-display: var(--type-display-large-font-family), "DM Sans", sans-serif;
   --font-body: var(--type-body-large-font-family), "Inter", sans-serif;
+  --font-brand: var(--font-syne), "Syne", sans-serif;
 
   /* Shadows from design tokens */
   --shadow-soft: var(--effect-soft-shadow);

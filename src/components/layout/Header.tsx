@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BUSINESS_CONFIG } from '@/lib/config/business';
 
 const PRIMARY_NAV_ITEMS = [
@@ -12,23 +13,24 @@ const PRIMARY_NAV_ITEMS = [
 
 export function Header() {
   return (
-    <header className="w-full bg-surface-container border-b border-outline-variant shrink-0">
+    <header className="w-full bg-surface-container shrink-0">
       <div className="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-2">
         {/* Brand identity */}
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-2 text-on-surface font-display font-semibold text-lg tracking-tight hover:text-primary focus-visible:outline-2 focus-visible:outline-primary rounded-xs"
+            className="flex items-center gap-2.5 text-on-surface font-brand font-bold text-xl tracking-tight hover:text-primary focus-visible:outline-2 focus-visible:outline-primary rounded-xs"
           >
-            <span
-              className="inline-block w-2.5 h-6 bg-primary rounded-xs shrink-0"
-              aria-hidden="true"
+            <Image
+              src="/logo.png"
+              alt=""
+              width={32}
+              height={32}
+              priority
+              className="w-8 h-8 rounded-full object-contain shrink-0"
             />
             <span>{BUSINESS_CONFIG.name}</span>
           </Link>
-          <span className="hidden sm:inline-block text-xs text-on-surface-variant border-l border-outline-variant pl-3">
-            Mafoluku, Lagos
-          </span>
         </div>
 
         {/* Phase 1 Status Indicator */}
@@ -56,7 +58,7 @@ export function Header() {
               key={item.label}
               href={item.href}
               aria-disabled={item.href === '#' ? 'true' : undefined}
-              className="min-h-touch-target min-w-touch-target px-3 py-2.5 inline-flex items-center justify-center text-xs font-medium text-on-surface hover:text-primary hover:bg-surface-container-high rounded-sm whitespace-nowrap focus-visible:outline-2 focus-visible:outline-primary"
+              className="min-h-touch-target min-w-touch-target px-3 py-2.5 inline-flex items-center justify-center text-xs font-medium italic text-on-surface hover:text-primary hover:bg-surface-container-high rounded-sm whitespace-nowrap focus-visible:outline-2 focus-visible:outline-primary"
             >
               {item.label}
             </Link>

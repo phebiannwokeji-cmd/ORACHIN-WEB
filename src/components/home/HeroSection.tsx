@@ -4,8 +4,8 @@
  * Pattern brief §1:
  *   - One headline
  *   - One supporting sentence
- *   - Two agreed buttons: "Shop Paints" and "Request a Quote"
- *   - Large labelled image placeholder (replace when owner supplies a photo)
+ *   - Two agreed buttons: "Shop Paints" and "Get a quote"
+ *   - Large approved promotional image
  *
  * Rules applied:
  *   - Site-Structure.md: two main actions, plain explanation, no delivery promise (G8)
@@ -15,7 +15,7 @@
  */
 import React from 'react';
 import Link from 'next/link';
-import { BUSINESS_CONFIG } from '@/lib/config/business';
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
@@ -38,36 +38,25 @@ export function HeroSection() {
       >
         {/* ── Text column ── */}
         <div className="flex flex-col gap-6">
-          {/* Availability badge — scope-and-phases.md: "Quote only" / "Made to order" */}
-          <p className="inline-flex items-center gap-2 self-start text-xs font-medium text-on-surface-variant">
-            <span
-              className="inline-block w-2 h-2 rounded-full bg-primary shrink-0"
-              aria-hidden="true"
-            />
-            Available, made to order · Quote only
-          </p>
-
-          {/* Headline: one sentence, factual, from PRD §1 and site-structure.md */}
+          {/* Headline */}
           <h1
             id="hero-heading"
             className="
               font-display font-semibold
               text-3xl sm:text-4xl lg:text-5xl
-              leading-tight tracking-tight
+              leading-tight tracking-tighter
               text-on-surface
             "
           >
-            Paint manufacturer serving Lagos and across Nigeria
+            Choose your paint. Work out how much you need. Get a quote.
           </h1>
 
-          {/* Supporting sentence: plain explanation per site-structure.md */}
+          {/* Supporting line */}
           <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed">
-            {BUSINESS_CONFIG.name} makes architectural and decorative paints
-            to order. Painting application services are offered alongside paint
-            supply.
+            Made-to-order paint from a Lagos manufacturer, with painting services when you need them. Questions? Message us on WhatsApp, Monday to Saturday, 9am to 5pm.
           </p>
 
-          {/* Two agreed actions per site-structure.md */}
+          {/* Two agreed actions */}
           <div className="flex flex-wrap gap-3">
             {/*
               "Shop Paints" — page not yet built; href="#" with aria-disabled.
@@ -82,7 +71,7 @@ export function HeroSection() {
                 min-h-[44px] px-6
                 bg-primary text-on-primary
                 text-sm font-medium
-                rounded-md shadow-soft
+                rounded-[100px] shadow-soft
                 hover:opacity-90
                 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
                 transition-opacity
@@ -92,7 +81,7 @@ export function HeroSection() {
               Shop Paints
             </a>
 
-            {/* "Request a Quote" — /calculator is built */}
+            {/* "Get a quote" — /calculator is built */}
             <Link
               href="/calculator"
               className="
@@ -101,69 +90,29 @@ export function HeroSection() {
                 bg-surface-container-high text-on-surface
                 border border-outline
                 text-sm font-medium
-                rounded-md
+                rounded-[100px]
                 hover:bg-surface-variant
                 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
                 transition-colors
               "
             >
-              Request a Quote
+              Get a quote
             </Link>
           </div>
-
-          {/* Hours disclosure — G8: no delivery promise */}
-          <p className="text-xs text-on-surface-variant">
-            Response hours: {BUSINESS_CONFIG.hours.days},{' '}
-            {BUSINESS_CONFIG.hours.time} ({BUSINESS_CONFIG.hours.timezone})
-          </p>
         </div>
 
-        {/* ── Image placeholder column ── */}
-        {/*
-          Owner action: replace this <div> with a real <Image> once a photo is supplied.
-          The placeholder must keep its aspect ratio and label so it never silently disappears.
-        */}
-        <div
-          role="img"
-          aria-label="Photo of ORACHIN Paints products — image to be supplied by owner"
-          className="
-            w-full
-            aspect-[4/3] lg:aspect-auto lg:h-[420px]
-            rounded-lg
-            bg-surface-container
-            border border-outline-variant
-            flex flex-col items-center justify-center gap-3
-            text-on-surface-variant text-sm text-center px-4
-          "
-        >
-          <span
-            className="
-              block w-14 h-14
-              rounded-full bg-surface-container-high
-              border border-outline-variant
-              flex items-center justify-center
-            "
-            aria-hidden="true"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={1.5}
-              className="w-7 h-7 text-outline"
-              aria-hidden="true"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <path d="M21 15l-5-5L5 21" />
-            </svg>
-          </span>
-          <span className="block font-medium text-on-surface-variant">
-            Product photo
-          </span>
-          <span className="block text-xs text-outline">
-            Owner to supply image — labelled placeholder shown
-          </span>
+        {/* ── Image column ── */}
+        <div className="w-full flex items-center justify-center">
+          <div className="relative w-full aspect-square max-w-[500px] rounded-2xl overflow-hidden shadow-medium border border-outline-variant bg-surface-container">
+            <Image
+              src="/images/hero-paint.jpg"
+              alt="ORACHIN Paints bucket and roller against a yellow-painted wall"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -10,10 +10,10 @@ const htmlPath = resolve(process.cwd(), '.next/server/app/index.html');
 test('Smoke test - Prerendered HomePage HTML exists and contains hero content', () => {
   assert.ok(existsSync(htmlPath), 'Production build HTML for home page must exist');
   const html = readFileSync(htmlPath, 'utf8');
-  // Headline: pattern-brief redesign (HeroSection.tsx h1)
-  assert.match(html, /Paint manufacturer serving Lagos and across Nigeria/);
-  // Supporting sentence: plain explanation per site-structure.md
-  assert.match(html, /makes architectural and decorative paints/);
+  // Headline: updated per owner instruction
+  assert.match(html, /Choose your paint\. Work out how much you need\. Get a quote\./);
+  // Supporting line: updated per owner instruction
+  assert.match(html, /Made-to-order paint from a Lagos manufacturer/);
 });
 
 test('Site-Structure.md - Header renders all five required primary navigation labels', () => {
